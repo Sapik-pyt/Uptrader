@@ -1,0 +1,10 @@
+<ul>
+    {% for post in posts %}
+        <li>
+            <a href="?{{additional_menu}}&{{menu}}={{post.id}}">{{ post.title }}</a>
+        </li>
+        {% if post.childrens %}
+            {% include 'menu/menus.html' with posts=post.childrens %}
+        {% endif %}
+    {% endfor %}
+</ul>
