@@ -32,7 +32,7 @@ def draw_menu(context, menu):
                 )
         post_dict = {'posts': main_post}
 
-    except Post.DoesNotExist:
+    except Exception:
         post_dict = {
             'posts': [
                 post for post in Post.objects.filter(
